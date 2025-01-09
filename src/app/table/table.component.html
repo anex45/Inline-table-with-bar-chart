@@ -1,0 +1,60 @@
+<div>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of tableData; let i = index">
+        <td>
+          <input 
+            [(ngModel)]="item.name" 
+            placeholder="Enter name" 
+            (ngModelChange)="updateRow(i, 'name', $event)"
+          />
+        </td>
+        <td>
+          <input 
+            [(ngModel)]="item.age" 
+            placeholder="Enter age" 
+            type="number" 
+            (ngModelChange)="updateRow(i, 'age', $event)"
+          />
+        </td>
+        <td>
+          <select [(ngModel)]="item.gender" (ngModelChange)="updateRow(i, 'gender', $event)">
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </td>
+        <td>
+          <input 
+            [(ngModel)]="item.email" 
+            placeholder="Enter email" 
+            type="email" 
+            (ngModelChange)="updateRow(i, 'email', $event)"
+          />
+        </td>
+        <td>
+          <input 
+            [(ngModel)]="item.city" 
+            placeholder="Enter city" 
+            (ngModelChange)="updateRow(i, 'city', $event)"
+          />
+        </td>
+        <td>
+          <button (click)="removeRow(i)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="addRow()">Add Row</button>
+</div>

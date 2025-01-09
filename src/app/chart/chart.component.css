@@ -1,0 +1,25 @@
+/* Wrapper for the chart to set max width and margin */
+div {
+    max-width: 600px;  /* Adjust the width of the chart */
+    margin: 0 auto;    /* Center the chart horizontally */
+    padding: 20px;     /* Add some padding for spacing */
+    text-align: center; /* Center text inside */
+  }
+  
+  /* Style for the chart container */
+  canvas {
+    width: 100% !important;  /* Make the chart fill the available width */
+    height: 300px !important; /* Set a fixed height */
+    max-width: 100%;         /* Ensure the chart doesn't overflow */
+    margin: 0 auto;          /* Center the chart inside the canvas */
+    display: block;          /* Ensure canvas is block-level element */
+  }
+  
+  /* Style for the 'No data' message */
+  div p {
+    color: #888;            /* Light gray text color */
+    font-size: 16px;        /* Adjust font size */
+    margin-top: 20px;       /* Add margin at the top */
+    font-style: italic;     /* Italicize the message */
+  }
+  

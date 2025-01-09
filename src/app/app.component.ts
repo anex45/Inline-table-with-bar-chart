@@ -1,12 +1,21 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { TableComponent } from './table/table.component';
+import { ChartComponent } from './chart/chart.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [TableComponent, ChartComponent]  // Import both components
 })
 export class AppComponent {
-  title = 'my-app';
+  tableData: any[] = [
+    { name: 'John', age: 28 },
+    { name: 'Jane', age: 32 }
+  ];
+
+  onTableDataChange(updatedData: any[]) {
+    this.tableData = updatedData;
+  }
 }
